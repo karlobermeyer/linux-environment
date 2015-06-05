@@ -16,6 +16,17 @@
 (add-hook 'c++-mode-hook (lambda () (setq comment-add 0)))
 
 
+; --------------- Google Styles ---------------
+
+(require 'google-c-style)
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+;(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+
+(require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode)) ; major mode
+;(add-hook 'js-mode-hook 'js2-minor-mode) ; minor mode for linting only
+
+
 ; --------------- Appearance ---------------
 
 ; Warning: Your init file should contain only one instance each of
