@@ -169,7 +169,7 @@ function acroreadn(){
 }
 
 # Git
-alias tgr='cd /home/kobermeyer/git_repos'
+alias tgr='cd ~/git_repos'
 alias gg='git gui &'
 alias gco='git checkout'
 alias gf='git fetch --all'

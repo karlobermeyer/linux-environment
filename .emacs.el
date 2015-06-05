@@ -79,7 +79,7 @@
 
 ; Indentation
 (add-hook 'python-mode-hook '(lambda ()
- (setq python-indent 2)))
+ (setq python-indent 4)))
 (add-hook 'c-mode-common-hook
           (lambda ()
             (c-set-offset 'arglist-intro '+)
@@ -163,7 +163,7 @@
 ; Periodically revert buffer automatically.
 (global-auto-revert-mode 1)
 
-; Don't wrap searches                                                        
+; Don't wrap searches
 (setq isearch-wrap-function '(lambda nil))
 
 ; Make region commands operate on current line when no region selected
