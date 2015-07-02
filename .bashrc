@@ -177,6 +177,7 @@ alias gk='gitk &'
 alias gka='gitk --all &'
 alias grph='git rev-parse HEAD'
 alias grh='git reset --hard'
+alias gitls='git ls-tree --full-tree -r HEAD'
 
 # SVN
 alias s='svn up; svn commit -m " "; svn up'
