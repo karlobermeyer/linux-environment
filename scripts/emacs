@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Copy this file into /usr/bin
+
+/Applications/Aquamacs.app/Contents/MacOS/Aquamacs "$@" # or whatever your path is
