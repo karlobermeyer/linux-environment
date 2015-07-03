@@ -4,7 +4,7 @@
 ; M-x byte-compile-file
 
 ; Path
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ; Default major-mode for new buffers
 (setq-default major-mode 'text-mode)
