@@ -157,7 +157,6 @@ alias eogpng='eog *.png &'
 function eogpngd(){
     eog $1/*.png &
 }
-alias m='matlab &'
 alias sagi='sudo apt-get install'
 alias sagupdate='sudo apt-get update'
 alias sagupgrade='sudo apt-get upgrade'
@@ -218,6 +217,31 @@ export BIBINPUTS=\
 # 'mm' for 'make movie'
 #alias mm='ffmpeg -i frame%04d.png -f avi -r 2 -vcodec mjpeg -qscale 1 output.avi'
 alias mm='ffmpeg -i frame%04d.png -f avi -t 20 -vcodec mjpeg -qscale 1 output.avi'
+function m4as2mp3s(){
+    # Convert all .m4a files in current directory to .mp3 files in subdirectory ./mp3s.
+    mkdir -p mp3s
+    FILES="./*.m4a"
+    #for file in $FILES; do ffmpeg -i $file ./mp3s/${file%.*}.mp3; done
+    for file in $FILES; do
+	file_in_base=`basename $file` # removes path
+	file_out=./mp3s/${file_in_base%.*}.mp3 # add new path
+	#ffmpeg -i $file $file_out # bit rate too low
+	ffmpeg -i $file -acodec libmp3lame -ab 256k $file_out
+    done
+}
+function mp4s2mp3s(){
+    # Convert all .mp4 (video) files in current directory to .mp3 (audio) files
+    # in subdirectory ./mp3s.
+    mkdir -p mp3s
+    FILES="./*.mp4"
+    #for file in $FILES; do ffmpeg -i $file ./mp3s/${file%.*}.mp3; done
+    for file in $FILES; do
+	file_in_base=`basename $file` # removes path
+	file_out=./mp3s/${file_in_base%.*}.mp3 # add new path
+	#ffmpeg -i $file $file_out # bit rate too low
+	ffmpeg -i $file -acodec libmp3lame -ab 256k $file_out
+    done
+}
 
 # Imagemagick
 function crop(){
@@ -238,6 +262,13 @@ function fullcropallpng(){
     # Call crop on all .png files in current directory
     FILES="./*.png"
     for i in $FILES; do fullcrop $i; done
+}
+
+# Dot
+function dots2pngs(){
+    # Convert all dot files in current directory to png files
+    FILES="./*.dot"
+    for i in $FILES; do dot -Tpng $i > ${i%.*}.png; done
 }
 
 # Python
