@@ -116,6 +116,8 @@
 (add-hook 'c-mode-hook 'hs-minor-mode)
 (add-hook 'python-mode-hook 'hs-minor-mode)
 (add-hook 'hs-minor-mode-hook
+	  (lambda () (local-set-key "\C-cc" 'hs-toggle-hiding)))
+(add-hook 'hs-minor-mode-hook
 	  (lambda () (local-set-key "\C-cs" 'hs-show-block)))
 (add-hook 'hs-minor-mode-hook
 	  (lambda () (local-set-key "\C-ch" 'hs-hide-block)))
@@ -125,8 +127,8 @@
 	  (lambda () (local-set-key "\C-cH" 'hs-hide-all)))
 
 ; Use extra mouse button(s) for hideshow toggle.
-(global-set-key [mouse-9] 'hs-toggle-hiding)
-(global-set-key [mouse-8] 'hs-toggle-hiding)
+;(global-set-key [mouse-9] 'hs-toggle-hiding)
+;(global-set-key [mouse-8] 'hs-toggle-hiding)
 ;(global-set-key [mouse-9] 'hs-show-block)
 ;(global-set-key [mouse-8] 'hs-hide-block)
 
