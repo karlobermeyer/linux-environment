@@ -3,6 +3,9 @@
 ; To speed emacs loading, compile this file by running
 ; M-x byte-compile-file
 
+; Open emacs window in front of terminal
+(x-focus-frame nil)
+
 ; Path
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
