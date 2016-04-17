@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Creates boilerplate python package ./$1/
+
+mkdir $1
+touch ./$1/__init__.py
+echo "    Created python package ./$1/"

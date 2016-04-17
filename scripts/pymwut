@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Creates boilerplate python module $1.py + unit test script test_$1.py
+
+cp ~/scripts/python_templates/module.py ./$1.py
+cp ~/scripts/python_templates/script.py ./test_$1.py
+
+# Redirect output to /dev/null because rpl won't shut up even with -q
+rpl -q "# import \$A" "import $1" ./test_$1.py &> /dev/null
+
+echo $'\n'"Created $1.py and test_$1.py"$'\n'

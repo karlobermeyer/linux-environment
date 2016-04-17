@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Creates boilerplate python module $1.py.
+
+cp ~/scripts/python_templates/script.py ./$1.py
+echo "    Created $1.py"
