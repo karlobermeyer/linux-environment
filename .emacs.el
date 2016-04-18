@@ -18,6 +18,9 @@
 (add-hook 'c-mode-hook (lambda () (setq comment-add 0)))
 (add-hook 'c++-mode-hook (lambda () (setq comment-add 0)))
 
+;(setq visible-bell 1) ; Make alert indicator a screen flash instead of bell
+(setq ring-bell-function 'ignore) ; Turn off alert indicator entirely
+
 
 ; --------------- Google Styles ---------------
 
