@@ -28,6 +28,8 @@
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 ;(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
+(setq css-indent-offset 2)
+
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode)) ; major mode
 ;(add-hook 'js-mode-hook 'js2-minor-mode) ; minor mode for linting only
