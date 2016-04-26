@@ -1,0 +1,128 @@
+a:link {
+  color: blue; /* unvisited */
+  text-decoration: none; /* remove underline */
+}
+a:hover {font-weight: bold;} /* element with mouse pointer hovering over it */
+a:active {color: magenta;} /* active once clicked on */
+a:visited {color: magenta;} /* visited */
+
+/* a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
+  cursor: pointer;
+} */
+
+.active {
+  background-color: grey;
+}
+
+article {
+  /*text-align: justify;*/
+  /* max-width: 40em;
+  min-width: 30em; */
+  margin-left: auto;
+  margin-right: auto;
+  overflow-wrap: break-word; /* renamed property in CSS3 draft spec */
+  width: 99%;
+  word-wrap: break-word; /* all browsers since IE 5.5+ */
+}
+
+body {
+  /* font-family: arial, sans-serif; */
+  /* font-family: 'lucida console', monospace; */
+  font-family: 'courier new', monospace;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 40em;
+  min-width: 32em;
+  width: 90%;
+}
+
+#first_hr {
+  clear: left;
+}
+
+.indent {
+  text-indent: 30px;
+}
+
+input[type='submit'] {
+  cursor: pointer;
+}
+
+nav {
+  /* min-width: 20em; */
+  border: 1;
+  clear: both;
+  display: block;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+nav ul {
+  /* position: relative;
+  right: 12%; */
+  /*text-align: center;*/
+  background-color: black;
+  border: 1px solid black;
+  list-style-type: none;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+}
+
+nav ul li {
+  /*display: inline-block;*/
+  float: left;
+  padding-right: 0.5em;
+}
+
+nav ul li a {
+  color: greenyellow;
+  display: block;
+  font-size: 18px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+ }
+nav ul li a:link {
+  background-color: black;
+  color: greenyellow;
+  text-decoration: none; /* remove underline */
+}
+nav ul li a:hover { font-weight: bold; }
+nav ul li a:active { color: magenta; }
+nav ul li a:visited { color: greenyellow; }
+
+table {
+  border-collapse: collapse;
+  max-width: 700;
+}
+
+#title {
+  font-size: 200%;
+  margin-top: 0px;
+  text-align: left;
+  display: inline;
+}
+
+#title_logo_img {
+  display: block;
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 140px;
+}
+
+#title_subtext {
+  font-size: 105%;
+  font-weight: bold;
+  text-align: left;
+}
+
+#title_subsubtext {
+  font-size: 100%;
+  text-align: left;
+}
