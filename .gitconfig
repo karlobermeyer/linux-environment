@@ -1,0 +1,20 @@
+[user]
+	name = Karl J. Obermeyer
+	email = karl.obermeyer@gmail.com
+[color]
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+[merge]
+	summary = true
+[push]
+	default = tracking
+[core]
+	excludesfile = /Users/gonzo/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
