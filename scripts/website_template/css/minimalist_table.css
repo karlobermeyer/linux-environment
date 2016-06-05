@@ -1,0 +1,35 @@
+.minimalist-table {
+  border-collapse: collapse;
+  margin: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.minimalist-table th {
+  border-bottom: 2px solid black;
+}
+
+.minimalist-table th,
+.minimalist-table td {
+  padding: 1px 5px;
+  text-align: center;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.minimalist-table th:first-child,
+.minimalist-table td:first-child {
+  padding: 0 5px 0 1px;
+  border-left: none;
+}
+
+.minimalist-table th:last-child,
+.minimalist-table td:last-child {
+  padding: 0 1px 0 5px;
+  border-right: none;
+}
+
+/* zebra stripes */
+.minimalist-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
