@@ -10,7 +10,7 @@ fi
 if [ -f ~/.bashrc_private ]; then
     . ~/.bashrc_private
 fi
-. ./.git-completion.bash
+. ~/.git-completion.bash
 
 # Add custom command-line utilities to PATH
 if [ -d ~/scripts ]; then
