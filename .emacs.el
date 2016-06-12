@@ -12,17 +12,11 @@
 ; Default major-mode for new buffers
 (setq-default major-mode 'text-mode)
 
-; Commenting
-(add-hook 'latex-mode-hook (lambda () (setq comment-add 0)))
-(add-hook 'python-mode-hook (lambda () (setq comment-add 0)))
-(add-hook 'c-mode-hook (lambda () (setq comment-add 0)))
-(add-hook 'c++-mode-hook (lambda () (setq comment-add 0)))
-
 ;(setq visible-bell 1) ; Make alert indicator a screen flash instead of bell
 (setq ring-bell-function 'ignore) ; Turn off alert indicator entirely
 
 
-; --------------- Google Styles ---------------
+; --------------- Styles ---------------
 
 (require 'google-c-style)
 (add-hook 'c-mode-common-hook 'google-set-c-style)
@@ -33,6 +27,16 @@
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode)) ; major mode
 ;(add-hook 'js-mode-hook 'js2-minor-mode) ; minor mode for linting only
+
+; Indent with spaces, not tabs
+; (check with M-x whitespace-mode
+(setq-default indent-tabs-mode nil)
+
+; Commenting
+(add-hook 'latex-mode-hook (lambda () (setq comment-add 0)))
+(add-hook 'python-mode-hook (lambda () (setq comment-add 0)))
+(add-hook 'c-mode-hook (lambda () (setq comment-add 0)))
+(add-hook 'c++-mode-hook (lambda () (setq comment-add 0)))
 
 
 ; --------------- Appearance ---------------
