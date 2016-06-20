@@ -23,6 +23,7 @@
 ;(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 (setq css-indent-offset 2)
+(setq js-indent-level 2)
 
 ;(require 'js2-mode) ; Alternative to javascript-mode
 ;If using js2-mode.el, make sure it is a version that works with emacs23.
