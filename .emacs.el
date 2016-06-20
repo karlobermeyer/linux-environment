@@ -24,8 +24,9 @@
 
 (setq css-indent-offset 2)
 
-(require 'js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode)) ; major mode
+;(require 'js2-mode) ; Alternative to javascript-mode
+;If using js2-mode.el, make sure it is a version that works with emacs23.
+;(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)) ; major mode
 ;(add-hook 'js-mode-hook 'js2-minor-mode) ; minor mode for linting only
 
 ; Indent with spaces, not tabs
