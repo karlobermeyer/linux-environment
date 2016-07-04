@@ -1,0 +1,4 @@
+#!/bin/bash
+
+git clone --recursive git@github.com:karlobermeyer/html_sandbox.git $1
+echo "---- Created boilerplate webpage in ./$1/ ----"

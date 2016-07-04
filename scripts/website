@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# Create boilerplate website in directory $1.
-
-mkdir $1
-cp -R ~/scripts/website_template/* $1
-echo "    Created boilerplate website in ./$1/"

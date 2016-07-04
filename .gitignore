@@ -10,5 +10,3 @@ sim
 *.swp
 *~
 #*#
-scripts/website_template/images
-scripts/website_template/node_modules
