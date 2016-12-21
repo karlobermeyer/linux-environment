@@ -2,4 +2,5 @@
 
 # Copy this file into /usr/bin
 
-/Applications/Aquamacs.app/Contents/MacOS/Aquamacs "$@" # or whatever your path is
+#/Applications/Aquamacs.app/Contents/MacOS/Aquamacs "$@" # or whatever your path is
+/Applications/Emacs.app/Contents/MacOS/Emacs "$@" # or whatever your path is
