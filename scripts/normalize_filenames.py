@@ -22,7 +22,7 @@ from pprint import pprint
 def main():
 
     # Load all file names in current directory
-    #filenames = ['Some bull\'shit.m4a']
+    #filenames = ['Some rubb\'ish.m4a']
     filenames = os.listdir('./')
 
     for filename_old in filenames:
