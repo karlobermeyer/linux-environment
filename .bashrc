@@ -16,6 +16,9 @@ fi
 if [ -d ~/scripts ]; then
     export PATH=$PATH:~/scripts
 fi
+if [ -d ~/git_repos.kjo/linux_environment/scripts ]; then
+    export PATH=$PATH:~/git_repos.kjo/linux_environment/scripts
+fi
 
 umask 022 # permissions
 export HOSTNAME=`/bin/hostname`
