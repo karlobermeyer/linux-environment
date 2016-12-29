@@ -1,50 +1,74 @@
 #!/usr/bin/env python
 
-'''Find recursively all instances of a file, say foo.bar, in the current
-directory tree, and replace each with a copy of the file biz.baz.
+'''
+Find recursively all instances of a file with a certain name, say foo.bar, in
+the current directory tree, and replace each with a copy of the file
+./somedir/biz.baz.
+
+::CAUTION:: If a file of the name biz.baz already exists in the same directory
+as foo.bar, it will be overwritten.  In the most common use case biz.baz ==
+foo.bar, so this is not a problem.
 
 Command-line usage:
-$ replace_all_file_occurances foo.bar ./biz.baz
-
-TODO: Use argparse to add command line flags for
-  interactive mode
-  dry run
-  verbose
+$ replace_all_file_occurances ./somedir/biz.baz foo.bar
 '''
 
 # Standard
-import sys
+import argparse
 import os
 import shutil
-# import re
-#from pprint import pprint
 import time
-# start_time = time.time()
-# . . .
-# print 'Elapsed time =', time.time() - start_time, 's'
 
 
 def main():
 
     start_time = time.time()
 
-    filename_old = sys.argv[1]
-    filename_new = sys.argv[2]
-    verbose = False
+    # Advanced argument access with argparse.
+    parser = argparse.ArgumentParser(
+            description=__doc__,
+            formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument(
+        'filename_new_with_path', type=str,
+        help='a copy of this file will replace each of the old files')
+    parser.add_argument(
+        'filename_old', type=str,
+        help='all files with this name in current directory '
+        'tree will be replaced')
+    parser.add_argument(
+        '-i', '--interactive', action='store_true', help='interactive mode')
+    parser.add_argument(
+        '-v', '--verbose', action='store_true', help='verbose output')
+    parser.add_argument(
+        '-d', '--dry', action='store_true', help='dry run')
+    args = parser.parse_args()
 
     # Find files
+    filename_new_path = os.path.dirname(args.filename_new_with_path)
+    #filename_new_without_path = os.path.basename(filename_new)
     for dirpath, dirnames, filenames in os.walk('.'):
         for filename in filenames:
-            if filename == filename_old:
+            if filename == args.filename_old:
                 filename_with_path = os.path.join(dirpath, filename)
 
-                if verbose:
-                    print '\nremoving ' + filename_with_path
-                os.remove(filename_with_path)
+                if filename_with_path == args.filename_new_with_path:
+                    break
 
-                if verbose:
-                    print 'copying ' + filename_new + ' to ' + dirpath
-                shutil.copy(filename_new, dirpath)
+                user_input = 'y'
+                if args.interactive:
+                    user_input = raw_input(
+                        'Replace ' + filename_with_path +
+                        ' with a copy of ' + args.filename_new_with_path +
+                        ' ? (y/n)')
+
+                if user_input == 'y':
+                    if args.verbose:
+                        print 'Replacing ' + filename_with_path + \
+                            ' with a copy of ' + args.filename_new_with_path
+                    if not args.dry:
+                        os.remove(filename_with_path)
+                        if filename_new_path != dirpath:
+                            shutil.copy(args.filename_new_with_path, dirpath)
 
     print '\nElapsed time =', time.time() - start_time, 's'
 

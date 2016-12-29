@@ -1,0 +1,58 @@
+#!/usr/bin/env python
+
+'''
+Rename all files in current directory so that
+  spaces become underscores,
+  the character ' is deleted, and
+  all letters are lower case.
+'''
+
+# Standard
+import argparse
+import os
+
+
+def main():
+
+    # Advanced argument access with argparse.
+    parser = argparse.ArgumentParser(
+            description=__doc__,
+            formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument(
+        '-i', '--interactive', action='store_true', help='interactive mode')
+    parser.add_argument(
+        '-v', '--verbose', action='store_true', help='verbose output')
+    parser.add_argument(
+        '-d', '--dry', action='store_true', help='dry run')
+    args = parser.parse_args()
+
+    # Load all file names in current directory.
+    #filenames = ['Some rubb\'ish.m4a']
+    filenames = os.listdir('./')
+
+    # Rename files according to rules.
+    for filename_old in filenames:
+
+        if os.path.isfile(filename_old):
+
+            filename_new = filename_old.replace(' ', '_')
+            filename_new = filename_new.replace('\'', '')
+            filename_new = filename_new.lower()
+
+            if filename_new != filename_old:
+
+                user_input = 'y'
+                if args.interactive:
+                    user_input = raw_input(
+                        'Rename '+ filename_old +
+                        ' to ' + filename_new + ' ? (y/n)')
+
+                if user_input == 'y':
+                    if args.verbose:
+                        print 'Renaming', filename_old, 'to', filename_new
+                    if not args.dry:
+                        os.rename(filename_old, filename_new)
+
+
+if __name__ == "__main__":
+    main()
