@@ -77,10 +77,10 @@ alias ltex='clear;pwd;echo "--------------------------------";\
   ls --color -F1h *.tex; echo " "'
 alias lltex='clear;pwd;echo "--------------------------------";\
   ls --color -Flh *.tex; echo " "'
-alias ltext='clear;pwd;echo "--------------------------------";\
-  ls --color -F1h *.text; echo " "'
-alias lltext='clear;pwd;echo "--------------------------------";\
-  ls --color -Flh *.text; echo " "'
+alias ltxt='clear;pwd;echo "--------------------------------";\
+  ls --color -F1h *.txt; echo " "'
+alias lltxt='clear;pwd;echo "--------------------------------";\
+  ls --color -Flh *.txt; echo " "'
 alias lpng='clear;pwd;echo "--------------------------------";\
   ls --color -F1h *.png; echo " "'
 alias pkk='pkill -KILL'
@@ -174,7 +174,7 @@ function acroreadn(){
 alias tgr='cd ~/git_repos'
 alias gg='git gui &'
 alias gco='git checkout'
-alias gf='git fetch --all'
+alias gfa='git fetch --all'
 alias gk='gitk &'
 alias gka='gitk --all &'
 alias grph='git rev-parse HEAD'
