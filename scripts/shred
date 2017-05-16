@@ -2,6 +2,9 @@
 
 '''
 Shred blank hard drive.
+
+If you want to remove the files and there are too many for rm, use
+$ find . -name "*" -print0 | xargs -0 rm
 '''
 
 #from pprint import pprint
@@ -9,25 +12,28 @@ import time
 import numpy as np
 
 i = 0
-#i_max = 2
-i_max = np.inf
-n = 200000000 # default => ~1.5 Gb / file
-#n = 200
-t = time.time(); t_string = str(t)
-x = np.random.random((n, 1))
+i_max = 500
+#i_max = np.inf
+#n = 200000000 # default => ~1.5 Gb / file
+n = 2000000
 
 while n > 32 and i < i_max:
 
-    print '\ni =', i
+    t = time.time();
+    x = np.random.random((n, 1))
+    print '\ni = %g, n= %g' % (i, n)
     #print 'n =', n
-    filename = 'x' + str(i) + '.' + t_string + '.npy'
+    filename = 'n' + str(n) + '-i' + str(i) + '-t' + str(t)
 
     try:
-        np.save(filename, x[0:n])
+        np.save(filename, x[0:n]) # Appends .npy if not already there.
+        print 'Wrote file', filename
+        i += 1
+        # Check data written properly.
         #print '\nx ='; print x[0:n]
-        #
         #y = np.load(filename)
         #print '\ny ='; print y
     except:
+        print 'exception'
         n /= 2
-        i += 1
+
