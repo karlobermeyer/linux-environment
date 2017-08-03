@@ -24,7 +24,7 @@ import numpy as np
 #thismanager.window.wm_geometry("+450+80") # works for backend 'TkAgg' only
 #from matplotlib import animation
 
-# Poject-Specific
+# Project-Specific
 # import $A
 
 
@@ -38,5 +38,5 @@ def main():
     print 'Elapsed time =', time.time() - start_time, 's'
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
