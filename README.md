@@ -1,4 +1,4 @@
-linux_environment
+linux-environment
 =================
 
 The bash and emacs settings I am running on Ubuntu 14.04
