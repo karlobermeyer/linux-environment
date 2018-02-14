@@ -1,23 +1,31 @@
 #!/bin/bash
 # .bashrc of Karl J. Obermeyer
 
-# Source global definitions
+# Global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
-# Source private definitions
+# Private definitions
 if [ -f ~/.bashrc_private ]; then
     . ~/.bashrc_private
+elif [ -d ~/Sync/.bashrc_private ]; then
+    export PATH=$PATH:~/Sync/.bashrc_private
 fi
 . ~/.git-completion.bash
 
-# Add custom command-line utilities to PATH
-if [ -d ~/scripts ]; then
-    export PATH=$PATH:~/scripts
+# Custom command-line utilities
+if [ -d ~/.utilities ]; then
+    export PATH=$PATH:~/.utilities
+elif [ -d ~/git_repos/linux_environment/.utilities ]; then
+    export PATH=$PATH:~/git_repos/linux_environment/.utilities
 fi
-if [ -d ~/git_repos.kjo/linux_environment/scripts ]; then
-    export PATH=$PATH:~/git_repos.kjo/linux_environment/scripts
+
+# Private custom command-line utilities
+if [ -d ~/.utilities_private ]; then
+    export PATH=$PATH:~/.utilities_private
+elif [ -d ~/Sync/.utilities_private ]; then
+    export PATH=$PATH:~/Sync/.utilities_private
 fi
 
 umask 022 # permissions
