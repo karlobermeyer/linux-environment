@@ -196,6 +196,10 @@ alias pkk='pkill -KILL'
 alias filecount='find . -type f | wc -l'
 alias dus='du -sh * | sort -h'
 alias duhm='sudo du -hm --max-depth 1 | sort -nr | head'
+alias cleaner='rm -f *~ .*~ *# .*# *.aux *.blg *.log *.dvi *.bak *.fot *.o *.do\
+  *.db *.mexmaci *.nav *.out *.snm *.toc *.pyc; llh'
+alias bibcleaner='rm -f *~ .*~ *# .*# *.aux *.blg *.bbl *.log *.dvi *.bak *.fot\
+   *.o *.do *.db *.mexmaci *.nav *.out *.snm *.toc *.pyc; llh'
 alias e='emacs'
 function ero(){
     emacs "$1" --eval '(setq buffer-read-only t)'
@@ -210,10 +214,6 @@ function eero(){
     emacs ~/.emacs.el --eval '(setq buffer-read-only t)' &
 }
 alias et='emacs ~/.tcshrc &'
-alias cleaner='rm -f *~ .*~ *# .*# *.aux *.blg *.log *.dvi *.bak *.fot *.o *.do\
-  *.db *.mexmaci *.nav *.out *.snm *.toc *.pyc; llh'
-alias bibcleaner='rm -f *~ .*~ *# .*# *.aux *.blg *.bbl *.log *.dvi *.bak *.fot\
-   *.o *.do *.db *.mexmaci *.nav *.out *.snm *.toc *.pyc; llh'
 #
 # ::WARNING:: When using any grep aliases that have a ``--include'' flag, must
 # use ./ instead of * at the end, e.g.,
@@ -334,10 +334,10 @@ function m4as2mp3s(){
     FILES="./*.m4a"
     #for file in $FILES; do ffmpeg -i $file ./mp3s/${file%.*}.mp3; done
     for file in $FILES; do
-	file_in_base=`basename $file` # removes path
-	file_out=./mp3s/${file_in_base%.*}.mp3 # add new path
-	#ffmpeg -i $file $file_out # bit rate too low
-	ffmpeg -i $file -acodec libmp3lame -ab 256k $file_out
+        file_in_base=`basename $file` # removes path
+        file_out=./mp3s/${file_in_base%.*}.mp3 # add new path
+        #ffmpeg -i $file $file_out # bit rate too low
+        ffmpeg -i $file -acodec libmp3lame -ab 256k $file_out
     done
 }
 function mp4s2mp3s(){
@@ -347,10 +347,10 @@ function mp4s2mp3s(){
     FILES="./*.mp4"
     #for file in $FILES; do ffmpeg -i $file ./mp3s/${file%.*}.mp3; done
     for file in $FILES; do
-	file_in_base=`basename $file` # removes path
-	file_out=./mp3s/${file_in_base%.*}.mp3 # add new path
-	#ffmpeg -i $file $file_out # bit rate too low
-	ffmpeg -i $file -acodec libmp3lame -ab 256k $file_out
+        file_in_base=`basename $file` # removes path
+        file_out=./mp3s/${file_in_base%.*}.mp3 # add new path
+        #ffmpeg -i $file $file_out # bit rate too low
+        ffmpeg -i $file -acodec libmp3lame -ab 256k $file_out
     done
 }
 
