@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# For command-line emacs invocation on Mac OS X.
 # Copy this file into /usr/bin
 
 #/Applications/Aquamacs.app/Contents/MacOS/Aquamacs "$@" # or whatever your path is
