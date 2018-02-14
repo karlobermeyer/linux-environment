@@ -18,6 +18,7 @@ then
     cp -R ~/.gitconfig ~/Sync/
     cp -R ~/.gnupg ~/Sync/ 2>/dev/null  # Suppress "Operation not supported on socket" errors.
     cp -R ~/.bashrc_private ~/Sync/
+    cp -R ~/.utilities_private ~/Sync/
     cp -R ~/README_IF_FOUND.txt ~/Sync/
 else
     echo "Sync directory not found."
@@ -32,6 +33,7 @@ cp -R ~/.ssh identity_backup/
 cp -R ~/.gitconfig identity_backup/
 cp -R ~/.gnupg identity_backup/
 cp -R ~/.bashrc_private identity_backup/
+cp -R ~/.utilities_private ~/Sync/
 cp -R ~/README_IF_FOUND.txt identity_backup/
 tar -cvzf identity_backup.tgz identity_backup
 rm -rf identity_backup

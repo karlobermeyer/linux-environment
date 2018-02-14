@@ -265,3 +265,8 @@ alias ipn='ipython notebook --pylab inline'
 export PYTHONPATH=$PYTHONPATH:~/.python:~/git_repos
 #export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/dist-packages/RunSnakeRun-2.0.2b1-py2.7.egg/runsnakerun/runsnake.py
 export PYTHONSTARTUP=~/.python/startup.py
+
+# For Apache Spark
+export JAVA_HOME=$(/usr/libexec/java_home)
+export SCALA_HOME=/usr/local/bin/scala
+export PATH=$PATH:$SCALA_HOME/bin

@@ -45,7 +45,8 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 export PS1="\u@\h:\w\$ "
 export PS2="> "
 
-# Ubuntu 12.04 trash operations
+# Ubuntu v12.04 trash operations
+# TODO(Karl): Update for v16.04 ?
 alias totrash='cd ~/.local/share/Trash'
 alias emptytrash='rm -rf ~/.local/share/Trash/expunged/*;\
   rm -rf ~/.local/share/Trash/files/*; rm -rf ~/.local/share/Trash/info/*;'
@@ -95,8 +96,6 @@ alias pkk='pkill -KILL'
 alias filecount='find . -type f | wc -l'
 alias dus='du -sh * | sort -h'
 alias duhm='sudo du -hm --max-depth 1 | sort -nr | head'
-alias a='atom'
-alias an='atom -n &'
 alias e='emacs'
 function ero(){
     emacs "$1" --eval '(setq buffer-read-only t)'
@@ -190,9 +189,10 @@ alias grh='git reset --hard'
 alias gitls='git ls-tree --full-tree -r HEAD'
 
 # SVN
-alias s='svn up; svn commit -m " "; svn up'
+#alias s='svn up; svn commit -m " "; svn up'
 
 # LaTeX
+# TODO (Karl): Update these?
 alias lbll="cleaner; latex main.tex; bibtex main; latex main.tex;\
   latex main.tex; make pdf"
 alias pbpp="cleaner; pdflatex main.tex; bibtex main; pdflatex main.tex;\
@@ -288,6 +288,6 @@ alias p='python3'
 alias ipy='ipython'
 alias ipp='ipython --pylab'
 alias ipn='ipython notebook --pylab inline'
-export PYTHONPATH=$PYTHONPATH:/home/kobermeyer/.python:/home/kobermeyer/git_repos
+export PYTHONPATH=$PYTHONPATH:/home/karl/.python:/home/karl/git_repos
 #export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/dist-packages/RunSnakeRun-2.0.2b1-py2.7.egg/runsnakerun/runsnake.py
-export PYTHONSTARTUP=/home/kobermeyer/.python/startup.py
+export PYTHONSTARTUP=/home/karl/.python/startup.py
