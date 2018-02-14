@@ -9,6 +9,7 @@
 
 # Copy files to sync'd folder.
 cp -R ~/.ssh ~/Sync/
+cp -R ~/.gitconfig ~/Sync/
 cp -R ~/.gnupg ~/Sync/ 2>/dev/null  # Suppress "Operation not supported on socket" errors.
 cp -R ~/.bashrc_private ~/Sync/
 cp -R ~/README_IF_FOUND.txt ~/Sync/
@@ -17,6 +18,7 @@ cp -R ~/README_IF_FOUND.txt ~/Sync/
 rm -rf identity_backup
 mkdir identity_backup
 cp -R ~/.ssh identity_backup/
+cp -R ~/.gitconfig identity_backup/
 cp -R ~/.gnupg identity_backup/
 cp -R ~/.bashrc_private identity_backup/
 cp -R ~/README_IF_FOUND.txt identity_backup/
