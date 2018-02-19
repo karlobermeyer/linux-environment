@@ -394,3 +394,6 @@ export PYTHONSTARTUP=/home/karl/.python/startup.py
 
 # Added by Anaconda3 installer
 export PATH="/home/karl/anaconda3/bin:$PATH"
+
+# Turn off GPU LED.
+nvidia-settings --assign GPULogoBrightness=0 1>/dev/null
