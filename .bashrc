@@ -397,3 +397,8 @@ export PATH="/home/karl/anaconda3/bin:$PATH"
 
 # Turn off GPU LED.
 nvidia-settings --assign GPULogoBrightness=0 1>/dev/null
+
+# For TensorFlow. This may only be necessary when TensorFlow is installed with
+# run files, but I installed with .deb files. So, remove if it works without
+# this.
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64
