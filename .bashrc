@@ -392,8 +392,8 @@ export PYTHONPATH=$PYTHONPATH:/home/karl/.python:/home/karl/git_repos
 #export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/dist-packages/RunSnakeRun-2.0.2b1-py2.7.egg/runsnakerun/runsnake.py
 export PYTHONSTARTUP=/home/karl/.python/startup.py
 
-# Added by Anaconda3 installer
-export PATH="/home/karl/anaconda3/bin:$PATH"
+# Uncomment for Anaconda access.
+export PATH="/opt/anaconda/anaconda3/bin:$PATH"
 
 # Turn off GPU LED.
 nvidia-settings --assign GPULogoBrightness=0 1>/dev/null
