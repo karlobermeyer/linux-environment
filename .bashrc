@@ -396,12 +396,12 @@ export PYTHONSTARTUP=/home/karl/.python/startup.py
 export PATH="/opt/anaconda/anaconda3/bin:$PATH"
 
 # Turn off GPU LED.
-nvidia-settings --assign GPULogoBrightness=0 1>/dev/null
+nvidia-settings --assign GPULogoBrightness=0 1>/dev/null 2>/dev/null
 
 # For CUDA.
 # Wanted to put in `/etc/rc.local`, but couldn't get to work there, maybe
 # because video driver not yet loaded.
-/usr/bin/nvidia-persistenced --verbose
+/usr/bin/nvidia-persistenced --verbose 2>/dev/null
 
 # For TensorFlow. This may only be necessary when TensorFlow is installed with
 # run files, but I installed with .deb files. So, remove if it works without
