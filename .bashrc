@@ -199,7 +199,7 @@ alias duhm='sudo du -hm --max-depth 1 | sort -nr | head'
 alias cleaner='rm -f *~ .*~ *# .*# *.aux *.blg *.log *.dvi *.bak *.fot *.o *.do\
   *.db *.mexmaci *.nav *.out *.snm *.toc *.pyc; llh'
 alias bibcleaner='rm -f *~ .*~ *# .*# *.aux *.blg *.bbl *.log *.dvi *.bak *.fot\
-   *.o *.do *.db *.mexmaci *.nav *.out *.snm *.toc *.pyc; llh'
+   *.o *.do *.db *.mexmaci *.nav *.out *.snm *.toc *.pyc main.synctex.gz; llh'
 alias e='emacs'
 function ero(){
     emacs "$1" --eval '(setq buffer-read-only t)'
