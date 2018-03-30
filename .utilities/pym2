@@ -2,5 +2,5 @@
 
 # Creates boilerplate python module $1.py.
 
-cp ~/git_repos.kjo/linux-environment/scripts/python2_templates/module.py ./$1.py
+cp ~/git_repos/linux-environment/.utilities/python2_templates/module.py ./$1.py
 echo $'\n'"Created $1.py"$'\n'

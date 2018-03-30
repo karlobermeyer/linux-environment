@@ -2,8 +2,8 @@
 
 # Creates boilerplate python module $1.py + unit test script test_$1.py
 
-cp ~/git_repos.kjo/linux-environment/scripts/python3_templates/module.py ./$1.py
-cp ~/git_repos.kjo/linux-environment/scripts/python3_templates/script.py ./test_$1.py
+cp ~/git_repos/linux-environment/.utilities/python3_templates/module.py ./$1.py
+cp ~/git_repos/linux-environment/.utilities/python3_templates/script.py ./test_$1.py
 
 # Redirect output to /dev/null because rpl won't shut up even with -q
 rpl -q "# import \$A" "import $1" ./test_$1.py &> /dev/null
