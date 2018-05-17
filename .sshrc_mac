@@ -1,0 +1,126 @@
+# Misc. aliases
+alias l='clear;pwd;echo "--------------------------------"; ls -F1; echo " "'
+alias ll='clear;pwd;echo "--------------------------------"; ls -Flh; echo " "'
+alias lh='clear;pwd;echo "--------------------------------"; ls -FA1h; echo " "'
+alias llh='clear;pwd;echo "--------------------------------"; ls -FAlh; echo " "'
+alias ld='clear;pwd;echo "--------------------------------"; ls -d -1 */; echo " "'
+alias ldh='clear;pwd;echo "--------------------------------"; ls -d .*/; echo " "'
+alias lhead='clear;pwd;echo "--------------------------------"; ls -FAlh | head; echo " "'
+alias lpy='clear;pwd;echo "--------------------------------"; ls -F1h *.py; echo " "'
+alias llpy='clear;pwd;echo "--------------------------------"; ls -Flh *.py; echo " "'
+alias lsh='clear;pwd;echo "--------------------------------"; ls -F1h *.sh; echo " "'
+alias llsh='clear;pwd;echo "--------------------------------"; ls -Flh *.sh; echo " "'
+alias lpkl='clear;pwd;echo "--------------------------------"; ls -F1h *.pkl; echo " "'
+alias llpkl='clear;pwd;echo "--------------------------------"; ls -Flh *.pkl; echo " "'
+alias lyaml='clear;pwd;echo "--------------------------------"; ls -F1h *.yaml; echo " "'
+alias llyaml='clear;pwd;echo "--------------------------------"; ls -Flh *.yaml; echo " "'
+alias ltex='clear;pwd;echo "--------------------------------"; ls -F1h *.tex; echo " "'
+alias lltex='clear;pwd;echo "--------------------------------"; ls -Flh *.tex; echo " "'
+alias ltxt='clear;pwd;echo "--------------------------------"; ls -F1h *.txt; echo " "'
+alias lltxt='clear;pwd;echo "--------------------------------"; ls -Flh *.txt; echo " "'
+alias lpng='clear;pwd;echo "--------------------------------"; ls -F1h *.png; echo " "'
+alias pkk='pkill -KILL'
+alias filecount='find . -type f | wc -l'
+alias dus='du -sh * | sort -r' # was sort -h, but changed for mac os x
+alias duhm='sudo du -hm --max-depth 1 | sort -nr | head'
+alias a='atom'
+alias an='atom -n &'
+alias e='emacs'
+function ero(){
+    emacs "$1" --eval '(setq buffer-read-only t)'
+}
+alias eb='emacs ~/.bashrc &'
+function ebro(){
+    emacs ~/.bashrc --eval '(setq buffer-read-only t)' &
+}
+alias ebp='emacs ~/.bashrc_private &'
+alias ee='emacs ~/.emacs.el &'
+function eero(){
+    emacs ~/.emacs.el --eval '(setq buffer-read-only t)' &
+}
+alias et='emacs ~/.tcshrc &'
+alias cleaner='rm -f *~ .*~ *# .*# *.aux *.blg *.log *.dvi *.bak *.fot *.o *.do *.db *.mexmaci *.nav *.out *.snm *.toc *.pyc; l'
+alias bibcleaner='rm -f *~ .*~ *# .*# *.aux *.blg *.bbl *.log *.dvi *.bak *.fot *.o *.do *.db *.mexmaci *.nav *.out *.snm *.toc *.pyc; l'
+#
+# ::WARNING:: When using any grep aliases that have a ``--include'' flag, must
+# use ./ instead of * at the end, e.g.,
+# $ grep --include=*.py "blah" ./
+function grepn(){
+    # Replaces
+    # alias grepn='grep -RHn --color' # case sensitive
+    grep -RHn --color "$1" ./
+}
+function grepni(){
+    # Replaces
+    # alias grepni='grep -RHin --color' # case sensitive
+    grep -RHin --color "$1" ./
+}
+function grept(){
+    # Replaces
+    # alias grept='grep -RHn --color --include=*.text --include=*.txt'
+    grep -RHn --color --include=*.text --include=*.txt "$1" ./
+}
+function grepc(){
+    # Replaces
+    # alias grepc="grep -r --include=*.h --include=*.hpp --include=*.c\
+    # --include=*.cpp --include=*.cc --include=*.C"
+    grep -r --include=*.h --include=*.hpp --include=*.c\
+     --include=*.cpp --include=*.cc --include=*.C "$1" ./
+}
+function grepy(){
+    # Replaces
+    # alias grepy='grep -RHn --color --include=*.py --include=*.pyx'
+    grep -RHn --color --include=*.py --include=*.pyx "$1" ./
+}
+function greptex(){
+    # Replaces
+    # alias greptex='grep -RHn --color --include=*.tex'
+    grep -RHn --color --include=*.tex "$1" ./
+}
+function grepm(){
+    # Replaces
+    # alias grepm='grep -RHn --color --include=*.m'
+    grep -RHn --color --include=*.m "$1" ./
+}
+function grepe(){
+    # Replaces
+    # alias grepm='grep -RHn --color --include=*.m'
+    grep -l "$1" ./ | xargs emacs &
+}
+function findname(){
+    find . -name "*$1*" 2>/dev/null
+}
+alias eogpng='eog *.png &'
+function eogpngd(){
+    eog $1/*.png &
+}
+alias sagi='sudo apt-get install'
+alias sagupdate='sudo apt-get update'
+alias sagupgrade='sudo apt-get upgrade'
+alias fm='nautilus . &'
+function acroreadn(){
+    # Open file in new instance of Adobe Reader
+    # acroread 1.pdf & acroread -openInNewInstance 2.pdf
+    acroread -openInNewInstance $1 &
+}
+
+# Git
+alias tgr='cd ~/git_repos'
+alias gg='git gui &'
+alias gco='git checkout'
+alias gfa='git fetch --all'
+alias gk='gitk &'
+alias gka='gitk --all &'
+alias grph='git rev-parse HEAD'
+alias grh='git reset --hard'
+alias gitls='git ls-tree --full-tree -r HEAD'
+
+# SVN
+#alias s='svn up; svn commit -m " "; svn up'
+
+# Python
+alias py='python'
+alias p='python3'
+alias ipy='ipython'
+alias ipp='ipython --pylab'
+alias ipn='ipython notebook --pylab inline'
