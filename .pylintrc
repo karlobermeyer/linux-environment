@@ -1,0 +1,13 @@
+[MASTER]
+
+disable=anomalous-backslash-in-string,
+        line-too-long,
+        missing-docstring,
+        invalid-name,
+        print-statement,
+        too-many-function-args,
+        unexpected-keyword-arg,
+        too-few-public-methods,
+        too-many-arguments,
+        too-many-locals,
+        misplaced-comparison-constant
