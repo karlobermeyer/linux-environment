@@ -1,4 +1,13 @@
-#!/bin/bash
+# 3rd Party
+if [ -f $SSHHOME/.sshrc.d/.git-completion.bash ]; then
+    . $SSHHOME/.sshrc.d/.git-completion.bash
+fi
+
+# Private definitions
+if [ -f $SSHHOME/.sshrc.d/.standard_cognition_rc ]; then
+    . $SSHHOME/.sshrc.d/.standard_cognition_rc
+fi
+
 
 # Misc. aliases
 alias l='clear;pwd;echo "--------------------------------";\
