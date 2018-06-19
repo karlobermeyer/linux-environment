@@ -155,4 +155,9 @@ alias p='python3'
 alias ipy='ipython'
 alias ipp='ipython --pylab'
 alias ipn='ipython notebook --pylab inline'
-alias pt3='python3 -m pytest'
+function epp(){
+    echo $PYTHONPATH
+}
+function pt3(){
+  python3 -m pytest -v $1
+}
