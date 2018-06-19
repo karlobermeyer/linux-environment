@@ -118,6 +118,7 @@ function acroreadn(){
 # Git
 alias tgr='cd ~/git_repos'
 alias gg='git gui &'
+alias ggc='git config --local --unset gui.geometry; git gui &'
 alias gco='git checkout'
 alias gfa='git fetch --all'
 alias gk='gitk &'
