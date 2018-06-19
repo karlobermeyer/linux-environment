@@ -3,9 +3,7 @@
 
 # Miscellaneous #
 #################
-
 sim
-*.pyc
 *.aux
 *.pdf
 *build*
@@ -51,3 +49,9 @@ sim
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Python #
+############
+*.pyc
+.pytest_cache
+**/visuals/*.png
