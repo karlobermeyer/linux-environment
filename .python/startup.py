@@ -1,6 +1,6 @@
 from kjo import *
 #from pylab import *
-import numpy as np
+import numpy as np; np.set_printoptions(linewidth=300)
 import scipy.linalg
 import matplotlib.pyplot as plt
 from pprint import pprint
