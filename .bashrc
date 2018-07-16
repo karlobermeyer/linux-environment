@@ -156,9 +156,13 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 #export TERM=xterm-color
 
 # Prompt
-##export PS1="\[\033[7;39m\]\h:\[\033[0m\] \w> "
-##export PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\$"
-#export PS1="\u@\h:\w\$ "
+#export PS1="\[\033[7;39m\]\h:\[\033[0m\] \w> "
+#export PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\$"
+#export PS1="\u@\h:\w\n\$ "
+#parse_git_branch() {
+#  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+#}
+#export PS1="\[\033[1;92m\]\u@\h:\[\033[1;96m\]\w\[\033[1;93m\]\$(parse_git_branch)\n\[\033[1;37m\]\$\[\e[0m\] "
 #export PS2="> "
 
 # Ubuntu v12.04 trash operations
