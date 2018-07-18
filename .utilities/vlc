@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# For command-line VLC
+
+/Applications/VLC.app/Contents/MacOS/VLC "$@" # or whatever your path is
