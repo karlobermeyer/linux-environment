@@ -121,6 +121,9 @@ function grepe(){
 function findname(){
     find . -name "*$1*" 2>/dev/null
 }
+function rpyl(){
+    find . -type f \( -name "*.py" -or -name "*.pyx" \) | xargs rpl -R $1 $2
+}
 alias eogpng='eog *.png &'
 function eogpngd(){
     eog $1/*.png &
