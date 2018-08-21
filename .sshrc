@@ -137,14 +137,15 @@ function acroreadn(){
 
 # Git
 alias tgr='cd ~/git_repos'
-alias gg='git gui &'
-alias ggc='git config --local --unset gui.geometry; git gui &'
-alias gco='git checkout'
-alias gfa='git fetch --all'
-alias gk='gitk &'
-alias gka='gitk --all &'
-alias grph='git rev-parse HEAD'
-alias grh='git reset --hard'
+alias gits='git status'
+alias gitg='git gui &'
+alias gitgc='git config --local --unset gui.geometry; git gui &'
+alias gitco='git checkout'
+alias gitfa='git fetch --all'
+alias gitfp='git fetch --prune'
+alias gitka='gitk --all &'
+alias gitrph='git rev-parse HEAD'
+alias gitrh='git reset --hard'
 alias gitls='git ls-tree --full-tree -r HEAD'
 
 # SVN
