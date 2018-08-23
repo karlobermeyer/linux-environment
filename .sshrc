@@ -147,6 +147,13 @@ alias gitka='gitk --all &'
 alias gitrph='git rev-parse HEAD'
 alias gitrh='git reset --hard'
 alias gitls='git ls-tree --full-tree -r HEAD'
+function fixlfs(){
+  git lfs uninstall
+  git reset --hard HEAD
+  git lfs install
+  git lfs checkout
+  echo "Fixed LFS"
+}
 
 # SVN
 #alias s='svn up; svn commit -m " "; svn up'
