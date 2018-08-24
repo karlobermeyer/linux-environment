@@ -68,6 +68,9 @@ parse_git_branch() {
 export PS1="\[\033[1;92m\]\u@\h:\[\033[1;96m\]\w\[\033[1;93m\]\$(parse_git_branch)\n\[\033[1;37m\]\$\[\e[0m\] "
 export PS2="> "
 
+# Misc. aliases
+alias timeout='gtimeout'  # `brew install coreutils` to get `gtimeout`.
+
 # LaTeX
 alias lbll="cleaner; latex main.tex; bibtex main; latex main.tex; latex main.tex; make pdf"
 alias pbpp="cleaner; pdflatex main.tex; bibtex main; pdflatex main.tex; pdflatex main.tex"
