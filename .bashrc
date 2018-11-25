@@ -177,32 +177,15 @@ alias lbll="cleaner; latex main.tex; bibtex main; latex main.tex;\
   latex main.tex; make pdf"
 alias pbpp="cleaner; pdflatex main.tex; bibtex main; pdflatex main.tex;\
   pdflatex main.tex"
-export TEXINPUTS=\
-./:\
-./images//:\
-./epsfiles//:\
-./fig//:\
-./figs//:\
-./xfig//:\
-/usr/share/tex4ht//:\
-/usr/share/tex-common//:\
-/usr/share/texinfo//:\
-/usr/share/texlive//:\
-/usr/share/texlive-bin//:\
-/usr/share/texmf//
-#~/lib/texmf/tex//:\\
 #
-export BSTINPUTS=\
-./:\
-~/lib/texmf/bibtex/bst//:\
-/usr/share/texmf-texlive/bibtex/bst//:\
-/usr/share/texlive/texmf-dist/bibtex/bst//
-export BIBINPUTS=\
-./:\
-./bib//:\
-~/lib/texmf/bibtex/bib//:\
-/usr/share/texlive/texmf-dist/bibtex/bib//:\
-~/git_repos/stdlatex/bib//
+export TEXINPUTS=$TEXINPUTS:\
+./:~/Sync/lib/texmf/tex//:\
+./images//:./epsfiles//:./fig//:./figs//:./xfig//
+#
+export BSTINPUTS=$BSTINPUTS:./:~/Sync/lib/texmf/bibtex/bst//
+#
+export BIBINPUTS=$BIBINPUTS:\
+./:./bib//:~/Sync/lib/texmf/bibtex/bib//:\
 
 # ffmpeg: Movie/animation from frames
 # 'mm' for 'make movie'

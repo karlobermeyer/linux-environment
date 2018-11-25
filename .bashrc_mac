@@ -74,32 +74,15 @@ alias timeout='gtimeout'  # `brew install coreutils` to get `gtimeout`.
 # LaTeX
 alias lbll="cleaner; latex main.tex; bibtex main; latex main.tex; latex main.tex; make pdf"
 alias pbpp="cleaner; pdflatex main.tex; bibtex main; pdflatex main.tex; pdflatex main.tex"
-export TEXINPUTS=\
-./:\
-/usr/local/teTeX/share/texmf//:\
-~/lib/texmf/tex//:\
-./images//:\
-./epsfiles//:\
-./fig//:\
-./figs//:\
-./xfig//:\
-/usr/share/texmf-texlive//:\
-/usr/share/tex4ht//:\
-/usr/share/tex-common//:\
-/usr/share/texinfo//:\
-/usr/share/texlive-base//:\
-/usr/share/texlive-bin//:\
-/usr/share/texmf//
-#/usr/share/texmf-texlive/tex/latex/base/article.cls
-export BSTINPUTS=\
-./:\
-/usr/local/teTeX/share/texmf/bibtex/bst//:\
-~/lib/texmf/bibtex/bst//:\
-/usr/share/texmf-texlive/bibtex/bst//
-export BIBINPUTS=\
-./:\
-./bib//:\
-~/lib/texmf/bibtex/bib//:\
+#
+export TEXINPUTS=$TEXINPUTS:\
+./:~/Sync/lib/texmf/tex//:\
+./images//:./epsfiles//:./fig//:./figs//:./xfig//
+#
+export BSTINPUTS=$BSTINPUTS:./:~/Sync/lib/texmf/bibtex/bst//
+#
+export BIBINPUTS=$BIBINPUTS:\
+./:./bib//:~/Sync/lib/texmf/bibtex/bib//:\
 
 # ffmpeg: Movie/animation from frames
 # 'mm' for 'make movie'
