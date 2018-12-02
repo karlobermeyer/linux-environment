@@ -164,6 +164,7 @@ alias p='python3'
 alias ipy='ipython'
 alias ipp='ipython --pylab'
 alias ipn='ipython notebook --pylab inline'
+alias pyclean='find . -name "*.py[co]" -o -name __pycache__ -exec rm -rf {} +'
 function spp(){
     DIR=`pwd`
     export PYTHONPATH=~/.python:$DIR
