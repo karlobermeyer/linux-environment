@@ -50,8 +50,8 @@ function eero(){
     emacs ~/.emacs.el --eval '(setq buffer-read-only t)' &
 }
 alias et='emacs ~/.tcshrc &'
-alias cleaner='rm -f *~ .*~ *# .*# *.aux *.blg *.log *.dvi *.bak *.fot *.o *.do *.db *.mexmaci *.nav *.out *.snm *.toc *.pyc; l'
-alias bibcleaner='rm -f *~ .*~ *# .*# *.aux *.blg *.bbl *.log *.dvi *.bak *.fot *.o *.do *.db *.mexmaci *.nav *.out *.snm *.toc *.pyc; l'
+alias cleaner='rm -f *~ .*~ *# .*# *.aux *.blg *.log *.dvi *.fot *.o *.do *.db *.mexmaci *.nav *.out *.snm *.toc *.pyc; l'
+alias bibcleaner='rm -f *~ .*~ *# .*# *.aux *.blg *.bbl *.log *.dvi *.fot *.o *.do *.db *.mexmaci *.nav *.out *.snm *.toc *.pyc; l'
 #
 # ::WARNING:: When using any grep aliases that have a ``--include'' flag, must
 # use ./ instead of * at the end, e.g.,
