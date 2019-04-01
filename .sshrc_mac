@@ -53,51 +53,53 @@ alias et='emacs ~/.tcshrc &'
 alias cleaner='rm -f *~ .*~ *# .*# *.aux *.blg *.log *.dvi *.fot *.o *.do *.db *.mexmaci *.nav *.out *.snm *.toc *.pyc; l'
 alias bibcleaner='rm -f *~ .*~ *# .*# *.aux *.blg *.bbl *.log *.dvi *.fot *.o *.do *.db *.mexmaci *.nav *.out *.snm *.toc *.pyc; l'
 #
-# ::WARNING:: When using any grep aliases that have a ``--include'' flag, must
+# ::WARNING:: When using any grep aliases that have an ``--include'' flag, must
 # use ./ instead of * at the end, e.g.,
 # $ grep --include=*.py "blah" ./
 function grepn(){
-    # Replaces
-    # alias grepn='grep -RHn --color' # case sensitive
     grep -RHn --color "$1" ./
 }
 function grepni(){
-    # Replaces
-    # alias grepni='grep -RHin --color' # case sensitive
     grep -RHin --color "$1" ./
 }
-function grept(){
-    # Replaces
-    # alias grept='grep -RHn --color --include=*.text --include=*.txt'
-    grep -RHn --color --include=*.text --include=*.txt "$1" ./
-}
-function grepc(){
-    # Replaces
-    # alias grepc="grep -r --include=*.h --include=*.hpp --include=*.c\
-    # --include=*.cpp --include=*.cc --include=*.C"
-    grep -r --include=*.h --include=*.hpp --include=*.c\
-     --include=*.cpp --include=*.cc --include=*.C "$1" ./
-}
+#
 function grepy(){
-    # Replaces
-    # alias grepy='grep -RHn --color --include=*.py --include=*.pyx'
     grep -RHn --color --include=*.py --include=*.pyx "$1" ./
 }
+function grepyba(){
+    grep -RHn -B"$1" -A"$2" --color --include=*.py --include=*.pyx "$3" ./
+}
+#
+function greprs(){
+    grep -RHn --color --include=*.rs "$1" ./
+}
+function greprsba(){
+    grep -RHn -B"$1" -A"$2" --color --include=*.rs "$3" ./
+}
+#
+function grepc(){
+    grep -RHn --include=*.h --include=*.hpp --include=*.c\
+     --include=*.cpp --include=*.cc --include=*.C "$1" ./
+}
+function grepcba(){
+    grep -RHn -B"$1" -A"$2" --include=*.h --include=*.hpp --include=*.c\
+     --include=*.cpp --include=*.cc --include=*.C "$3" ./
+}
+#
+function grept(){
+    grep -RHn --color --include=*.text --include=*.txt "$1" ./
+}
+function greptba(){
+    grep -RHn -B"$1" -A"$2" --color --include=*.text --include=*.txt "$3" ./
+}
 function greptex(){
-    # Replaces
-    # alias greptex='grep -RHn --color --include=*.tex'
     grep -RHn --color --include=*.tex "$1" ./
 }
-function grepm(){
-    # Replaces
-    # alias grepm='grep -RHn --color --include=*.m'
-    grep -RHn --color --include=*.m "$1" ./
-}
+#
 function grepe(){
-    # Replaces
-    # alias grepm='grep -RHn --color --include=*.m'
     grep -l "$1" ./ | xargs emacs &
 }
+#
 function findname(){
     find . -name "*$1*" 2>/dev/null
 }
