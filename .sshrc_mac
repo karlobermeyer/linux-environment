@@ -86,6 +86,13 @@ function grepcba(){
      --include=*.cpp --include=*.cc --include=*.C "$3" ./
 }
 #
+function grepmd(){
+    grep -RHn --color --include=*.md "$1" ./
+}
+function grepmdba(){
+    grep -RHn -B"$1" -A"$2" --color --include=*.md "$3" ./
+}
+#
 function grept(){
     grep -RHn --color --include=*.text --include=*.txt "$1" ./
 }
