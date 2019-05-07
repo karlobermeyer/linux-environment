@@ -82,7 +82,7 @@ export TEXINPUTS=$TEXINPUTS:\
 export BSTINPUTS=$BSTINPUTS:./:~/Sync/lib/texmf/bibtex/bst//
 #
 export BIBINPUTS=$BIBINPUTS:\
-./:./bib//:~/Sync/lib/texmf/bibtex/bib//:\
+./:./bib//:~/Sync/lib/texmf/bibtex/bib//
 
 # ffmpeg: Movie/animation from frames
 # 'mm' for 'make movie'
