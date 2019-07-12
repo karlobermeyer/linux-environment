@@ -146,6 +146,17 @@ function acroreadn(){
 
 # Git
 alias tgr='cd ~/git_repos'
+alias gitb='git branch'
+function gitbn(){
+    # Make new local and tracked remote branch.
+    git checkout -b $1
+    git push -u origin $1
+}
+function gitbd(){
+    # Delete remote and local copies of branch.
+    git push origin --delete $1
+    git branch -D $1
+}
 alias gits='git status'
 alias gitg='git gui &'
 alias gitgc='git config --local --unset gui.geometry; git gui &'
