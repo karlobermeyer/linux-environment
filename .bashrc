@@ -253,6 +253,9 @@ export PYTHONSTARTUP=/home/karl/.python/startup.py
 # Uncomment for Anaconda access.
 export PATH="/opt/anaconda/anaconda3/bin:$PATH"
 
+# Rust
+alias cargotn='cargo test -- --nocapture'
+
 # Turn off GPU LED.
 nvidia-settings --assign GPULogoBrightness=0 1>/dev/null 2>/dev/null
 
