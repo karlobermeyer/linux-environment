@@ -71,10 +71,17 @@ alias bibcleaner='rm -f *~ .*~ *# .*# *.aux *.blg *.bbl *.log *.dvi *.fot *.o *.
 # use ./ instead of * at the end, e.g.,
 # $ grep --include=*.py "blah" ./
 function grepn(){
-    grep -RHn --color "$1" ./
+    grep -RHnI --color "$1" ./
 }
 function grepni(){
-    grep -RHin --color "$1" ./
+    grep -RHinI --color "$1" ./
+}
+#
+function grepsh(){
+    grep -RHn --color --include=*.sh "$1" ./
+}
+function grepshba(){
+    grep -RHn -B"$1" -A"$2" --color --include=*.sh "$3" ./
 }
 #
 function grepy(){
