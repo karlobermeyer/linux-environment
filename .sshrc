@@ -171,29 +171,49 @@ __git_complete g _git
 alias tgr='cd ~/git_repos'
 alias gb='git branch'
 __git_complete gb _git_branch
+function gbn(){
+    # Make new local branch that tracks local master, and make a remote branch
+    # on fork `karl`.
+    arc feature $1 # Same as `git checkout -b $1 --track master`?
+    git push -u karl $1:$1
+}
+function gbd(){
+    # Delete copies of branch $2 locally and on remote $1.
+    git checkout master  # Make sure not on branch while deleting.
+    git push $1 --delete $2
+    git branch -Dq $2
+}
+__git_complete gbd _git_branch
+function gum(){
+    # Update master locally and on fork $1.
+    git checkout master
+    git pull origin
+    git push $1 master:master
+}
+__git_complete gum _git_branch
 #
 alias gco='git checkout'
 __git_complete gco _git_checkout
-function gcoo(){
-    # Check out and track a branch from origin.
-    git fetch origin
-    git checkout -b $1 --track origin/$1
+function gcot(){
+    # Check out and track a branch $2 from remote $1.
+    git fetch $1
+    git checkout -b $2 --track $1/$2
 }
-__git_complete gcoo _git_checkout
+__git_complete gcot _git_checkout
 #
 alias gfa='git fetch --all'
-alias gfo='git fetch origin'
 alias gfp='git fetch --prune'
 alias gfap='git fetch --all; git fetch --prune'
 # alias gfapp='git fetch --all; git fetch --prune; git pull'
 #
 alias grh='git reset --hard'
 __git_complete grh _git_reset
-function grho(){
-    git fetch origin
-    git reset --hard origin/$(parse_git_branch)
+function grhr(){
+    # Reset hard to current branch on remote $1.
+    git fetch $1
+    git reset --hard $1/$(parse_git_branch)
 }
-__git_complete grho _git_reset
+__git_complete grhr _git_reset
 #
 alias grs='git remote show'
 alias gg='git gui &'
