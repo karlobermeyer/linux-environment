@@ -184,10 +184,8 @@ function gcot(){
 }
 __git_complete gcot _git_checkout
 #
-alias gfa='git fetch --all'
-alias gfp='git fetch --prune'
-alias gfap='git fetch --all; git fetch --prune'
-# alias gfapp='git fetch --all; git fetch --prune; git pull'
+alias gfap='git fetch --all --prune'
+alias gfappom='git fetch --all --prune; git pull origin master'
 #
 alias grh='git reset --hard'
 __git_complete grh _git_reset
